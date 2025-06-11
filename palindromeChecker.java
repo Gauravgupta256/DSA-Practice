@@ -3,23 +3,30 @@ import java.util.Scanner;
 public class palindromeChecker {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a word or number: ");
-        //string and number both are treated as string
-        String str = sc.nextLine().toLowerCase().replaceAll("[^a-z0-9]", "");
-        sc.close();
-        
-        boolean isPalindrome = true;
-        for (int i = 0; i < str.length() / 2; i++) {
-            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
-                isPalindrome = false;
+
+        while (true) { 
+            System.out.println("\nEnter a word or number (or type 'exit' to quit): ");
+            String input = sc.nextLine().trim(); 
+
+            if (input.equalsIgnoreCase("exit")) { 
+                System.out.println("Thanks for using Palidrom Checker!");
                 break;
             }
-        }
 
-        if (isPalindrome) {
-            System.out.println("Palindrome");
-        } else {
-            System.out.println("Not a palindrome");
+            if (input.isEmpty()) { 
+                System.out.println("Invalid input! Please enter a valid word or number.");
+                continue;
+            }
+
+            String str = input.toLowerCase().replaceAll("[^a-z0-9]", "");
+            boolean isPalindrome = new StringBuilder(str).reverse().toString().equals(str); 
+            System.out.println("Checking: " + input + " ");
+            if (isPalindrome) {
+                System.out.println(input + " is a Palindrome!");
+            } else {
+                System.out.println(input + " is Not a Palindrome.");
+            }
         }
+        sc.close();
     }
 }
