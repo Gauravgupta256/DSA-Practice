@@ -1,0 +1,571 @@
+# ⏱️ Time Complexity & 💾 Space Complexity
+
+## Introduction
+
+Whenever we write a program, two important questions come to mind:
+
+1. **How fast does the program run?** → **Time Complexity**
+2. **How much memory does the program use?** → **Space Complexity**
+
+Think of them as the **speed** and **storage** of your algorithm.
+
+---
+
+# 🚗 Real-Life Analogy
+
+Imagine you're going from **Home 🏠 to Office 🏢**.
+
+There are two routes:
+
+### Route 1
+
+* Takes **20 minutes**
+* Uses **1 litre of fuel**
+
+### Route 2
+
+* Takes **10 minutes**
+* Uses **5 litres of fuel**
+
+Which is better?
+
+It depends.
+
+* If you're in a hurry → Choose Route 2.
+* If you want to save fuel → Choose Route 1.
+
+Programming is exactly the same.
+
+Sometimes we choose an algorithm that is **faster** but uses **more memory**.
+
+Sometimes we choose one that is **slower** but uses **less memory**.
+
+This trade-off is called the **Time-Space Tradeoff**.
+
+---
+
+# ⏱️ What is Time Complexity?
+
+Time Complexity tells us:
+
+> **How the execution time of an algorithm grows as the input size increases.**
+
+Notice the word **grows**.
+
+It does **NOT** tell us the exact time like:
+
+❌ 5 seconds
+
+❌ 2 milliseconds
+
+Instead, it tells us the **growth rate**.
+
+---
+
+## Example 1
+
+```java
+for(int i = 0; i < n; i++) {
+    System.out.println(i);
+}
+```
+
+If
+
+```
+n = 5
+```
+
+Loop runs **5 times**.
+
+If
+
+```
+n = 100
+```
+
+Loop runs **100 times**.
+
+If
+
+```
+n = 1,000,000
+```
+
+Loop runs **1,000,000 times**.
+
+So,
+
+```
+Time Complexity = O(n)
+```
+
+---
+
+## Real-Life Analogy
+
+Imagine you have to shake hands with everyone in a room.
+
+If there are
+
+```
+10 people
+```
+
+you shake hands **10 times**.
+
+If there are
+
+```
+100 people
+```
+
+you shake hands **100 times**.
+
+More people → More work.
+
+This is **O(n)**.
+
+---
+
+# Example 2
+
+```java
+for(int i = 0; i < n; i++) {
+    for(int j = 0; j < n; j++) {
+        System.out.print("*");
+    }
+}
+```
+
+Outer loop runs
+
+```
+n times
+```
+
+Inner loop also runs
+
+```
+n times
+```
+
+Total work
+
+```
+n × n = n²
+```
+
+Time Complexity
+
+```
+O(n²)
+```
+
+---
+
+## Real-Life Analogy
+
+Imagine a classroom.
+
+Every student has to greet every other student.
+
+If there are
+
+```
+10 students
+
+10 × 10 = 100 greetings
+```
+
+If there are
+
+```
+100 students
+
+100 × 100 = 10,000 greetings
+```
+
+This grows much faster than O(n).
+
+---
+
+# Why Don't We Measure Time in Seconds?
+
+Suppose two people write the same program.
+
+Person A
+
+* Uses a gaming laptop
+
+Person B
+
+* Uses a 10-year-old computer
+
+The same code may run
+
+```
+1 second
+```
+
+on one computer and
+
+```
+5 seconds
+```
+
+on another.
+
+That's why we don't measure algorithms in seconds.
+
+Instead, we measure **how the number of operations grows**.
+
+---
+
+# What is Big O Notation?
+
+Big O tells us the **worst-case growth of an algorithm**.
+
+Examples
+
+```
+O(1)
+O(log n)
+O(n)
+O(n log n)
+O(n²)
+```
+
+The smaller the growth, the better the algorithm scales.
+
+---
+
+# 📊 Common Time Complexities
+
+| Complexity | Name         | Example                   |
+| ---------- | ------------ | ------------------------- |
+| O(1)       | Constant     | Access an array element   |
+| O(log n)   | Logarithmic  | Binary Search             |
+| O(n)       | Linear       | Traverse an array         |
+| O(n log n) | Linearithmic | Merge Sort                |
+| O(n²)      | Quadratic    | Nested loops              |
+| O(n³)      | Cubic        | Triple nested loops       |
+| O(2ⁿ)      | Exponential  | Recursive subsets         |
+| O(n!)      | Factorial    | Generate all permutations |
+
+---
+
+# 📈 Growth Comparison
+
+Suppose
+
+```
+n = 1000
+```
+
+| Complexity | Approximate Operations |
+| ---------- | ---------------------: |
+| O(1)       |                      1 |
+| O(log n)   |                     10 |
+| O(n)       |                  1,000 |
+| O(n log n) |                 10,000 |
+| O(n²)      |              1,000,000 |
+| O(n³)      |          1,000,000,000 |
+
+Notice how quickly higher-order complexities become impractical.
+
+---
+
+# 💾 What is Space Complexity?
+
+Space Complexity tells us:
+
+> **How much extra memory an algorithm needs while it runs.**
+
+It is **not** just the memory used by the input.
+
+It mainly refers to **additional memory** (also called **auxiliary space**).
+
+---
+
+## Example 1
+
+```java
+int sum = 0;
+
+for(int i = 0; i < n; i++) {
+    sum += arr[i];
+}
+```
+
+Extra memory used
+
+```
+sum
+i
+```
+
+Only a few variables.
+
+No matter how large `n` becomes, the extra memory stays the same.
+
+```
+Space Complexity = O(1)
+```
+
+---
+
+## Example 2
+
+```java
+int[] temp = new int[n];
+```
+
+If
+
+```
+n = 1000
+```
+
+the array stores 1000 elements.
+
+If
+
+```
+n = 1,000,000
+```
+
+it stores 1,000,000 elements.
+
+Memory grows with the input.
+
+```
+Space Complexity = O(n)
+```
+
+---
+
+# 🧳 Real-Life Analogy
+
+Imagine you're going on a trip.
+
+### Small Backpack 🎒
+
+You carry
+
+* Phone
+* Wallet
+* Keys
+
+No matter how long the trip is, the backpack size stays the same.
+
+```
+Space Complexity = O(1)
+```
+
+---
+
+### Large Suitcase 🧳
+
+Every extra day requires more clothes.
+
+Longer trip → Bigger suitcase.
+
+```
+Space Complexity = O(n)
+```
+
+---
+
+# Time vs Space
+
+Sometimes we use more memory to make a program faster.
+
+Example:
+
+Without using a `HashMap`
+
+```
+Search every element
+
+Time = O(n)
+Space = O(1)
+```
+
+Using a `HashMap`
+
+```
+Search = O(1)
+
+Time improves
+
+Space increases to O(n)
+```
+
+This is the **Time-Space Tradeoff**.
+
+---
+
+# How to Calculate Time Complexity
+
+## Step 1
+
+Ignore
+
+* Variable declarations
+* Assignments
+* Print statements
+
+Focus on **loops** and **recursive calls**.
+
+---
+
+## Step 2
+
+Count how many times loops execute.
+
+Example
+
+```java
+for(int i = 0; i < n; i++)
+```
+
+Runs
+
+```
+n times
+
+O(n)
+```
+
+---
+
+Example
+
+```java
+for(int i = 0; i < n; i++) {
+    for(int j = 0; j < n; j++) {
+    }
+}
+```
+
+```
+n × n
+
+O(n²)
+```
+
+---
+
+Example
+
+```java
+while(n > 1) {
+    n = n / 2;
+}
+```
+
+```
+n
+n/2
+n/4
+n/8
+...
+
+O(log n)
+```
+
+---
+
+# Common Interview Examples
+
+### Find Maximum in an Array
+
+```java
+for(int num : arr)
+```
+
+Time
+
+```
+O(n)
+```
+
+Space
+
+```
+O(1)
+```
+
+---
+
+### Binary Search
+
+Time
+
+```
+O(log n)
+```
+
+Space
+
+```
+O(1)
+```
+
+(Iterative version)
+
+---
+
+### Merge Sort
+
+Time
+
+```
+O(n log n)
+```
+
+Space
+
+```
+O(n)
+```
+
+---
+
+### Bubble Sort
+
+Time
+
+```
+O(n²)
+```
+
+Space
+
+```
+O(1)
+```
+
+---
+
+# Tips to Remember
+
+* **One loop** → Usually **O(n)**
+* **Nested loops** → Usually **O(n²)**
+* **Divide by 2 each time** → Usually **O(log n)**
+* **Double recursion (like Fibonacci)** → Often **O(2ⁿ)**
+* **Extra array of size n** → **O(n)** space
+* **Only a few variables** → **O(1)** space
+
+---
+
+# Key Takeaways
+
+* **Time Complexity** measures **how the running time grows** as the input size increases.
+* **Space Complexity** measures **how much extra memory is required**.
+* We use **Big O Notation** to describe growth, not exact seconds or bytes.
+* A good algorithm is one that balances **speed** and **memory** based on the problem's requirements.
+* In interviews, always mention **both Time Complexity and Space Complexity** after explaining your solution.
+
+> **Golden Rule:** A correct solution is good. An efficient solution is better. The best solution is both correct **and** efficient.
