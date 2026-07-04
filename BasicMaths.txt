@@ -1,0 +1,735 @@
+BASIC MATHS KNOWLEDGE
+
+# 1. Number System (Binary & Decimal)
+
+### What is it?
+
+Different ways of representing numbers.
+
+* Decimal → Base 10 (0–9)
+* Binary → Base 2 (0,1)
+
+### Example
+
+```text
+Decimal : 13
+
+Binary  : 1101
+```
+
+### Used In
+
+* Bit Manipulation
+* Operating Systems
+* Networking
+
+---
+
+# 2. Prime Numbers
+
+### What is it?
+
+A number having exactly **2 factors**.
+
+Example
+
+```text
+2 3 5 7 11 13
+```
+
+Not Prime
+
+```text
+4 = 1,2,4
+```
+
+### DSA Example
+
+Check whether
+
+```text
+29
+```
+
+is prime.
+
+---
+
+# 3. Factors & Divisors
+
+### What is it?
+
+Numbers that divide another number exactly.
+
+Example
+
+```text
+Factors of 12
+
+1 2 3 4 6 12
+```
+
+### DSA Example
+
+Count the number of divisors.
+
+---
+
+# 4. GCD & LCM
+
+### GCD
+
+Largest common factor.
+
+Example
+
+```text
+12 and 18
+
+Factors
+
+12 → 1 2 3 4 6 12
+
+18 → 1 2 3 6 9 18
+
+GCD = 6
+```
+
+### LCM
+
+Smallest common multiple.
+
+```text
+12
+
+24
+
+36
+
+18
+
+36
+
+LCM = 36
+```
+
+### Used In
+
+* Fractions
+* Number Theory
+
+---
+
+# 5. Euclidean Algorithm
+
+Fastest way to find GCD.
+
+Example
+
+```text
+GCD(48,18)
+
+48 % 18 = 12
+
+18 % 12 = 6
+
+12 % 6 = 0
+
+Answer = 6
+```
+
+Time Complexity
+
+```text
+O(log N)
+```
+
+---
+
+# 6. Modular Arithmetic
+
+Used when numbers become very large.
+
+Example
+
+```text
+17 % 5 = 2
+```
+
+Formula
+
+```text
+(7+9)%5
+
+=16%5
+
+=1
+```
+
+Used In
+
+* Competitive Programming
+* Cryptography
+
+---
+
+# 7. Fast Exponentiation
+
+Find
+
+```text
+2^100
+```
+
+without multiplying 100 times.
+
+Instead
+
+```text
+2^100
+
+↓
+
+2^50
+
+↓
+
+2^25
+
+↓
+
+...
+```
+
+Time
+
+```text
+O(log N)
+```
+
+---
+
+# 8. Square Root Optimization
+
+Instead of checking till N,
+
+check till
+
+```text
+√N
+```
+
+Example
+
+To find factors of
+
+```text
+100
+```
+
+Don't check
+
+```text
+1...100
+```
+
+Check
+
+```text
+1...10
+```
+
+Much faster.
+
+---
+
+# 9. Bit Manipulation
+
+Work directly on binary bits.
+
+Example
+
+```text
+5
+
+101
+```
+
+Check Odd or Even
+
+```text
+5 & 1
+
+=
+
+1
+
+Odd
+```
+
+---
+
+# 10. XOR Properties
+
+Important rules
+
+```text
+a ^ a = 0
+
+a ^ 0 = a
+
+a ^ b ^ a = b
+```
+
+Example
+
+```text
+5 ^ 5 = 0
+```
+
+Used In
+
+* Find unique element
+
+---
+
+# 11. Prefix Sum
+
+Store cumulative sums.
+
+Example
+
+Array
+
+```text
+2 4 6 8
+```
+
+Prefix
+
+```text
+2
+
+6
+
+12
+
+20
+```
+
+Find
+
+```text
+sum(2,4)
+```
+
+in O(1).
+
+---
+
+# 12. Matrix Basics
+
+2D Array.
+
+Example
+
+```text
+1 2
+
+3 4
+```
+
+Common Operations
+
+* Rotate
+* Transpose
+* Spiral
+
+---
+
+# 13. Factorial
+
+Product of numbers.
+
+Example
+
+```text
+5!
+
+=
+
+5×4×3×2×1
+
+=
+
+120
+```
+
+Used In
+
+* Combinations
+
+---
+
+# 14. Combinations & Permutations
+
+### Permutation
+
+Order matters.
+
+Example
+
+```text
+ABC
+
+ACB
+
+BAC
+```
+
+### Combination
+
+Order doesn't matter.
+
+Example
+
+```text
+AB
+
+AC
+
+BC
+```
+
+Interview Favorite.
+
+---
+
+# 15. Pascal's Triangle
+
+```
+        1
+      1   1
+    1   2   1
+  1   3   3   1
+1  4   6   4   1
+```
+
+Each number
+
+```text
+Above Left
+
++
+
+Above Right
+```
+
+Used for
+
+```text
+nCr
+```
+
+---
+
+# 16. Arithmetic Progression (AP)
+
+Difference is constant.
+
+Example
+
+```text
+2
+
+5
+
+8
+
+11
+
+14
+```
+
+Difference
+
+```text
++3
+```
+
+---
+
+# 17. Geometric Progression (GP)
+
+Ratio is constant.
+
+Example
+
+```text
+2
+
+4
+
+8
+
+16
+
+32
+```
+
+Multiply by
+
+```text
+2
+```
+
+---
+
+# 18. Overflow & Integer Limits
+
+Example
+
+Java
+
+```java
+int x = 2147483647;
+
+x++;
+```
+
+Result
+
+```text
+-2147483648
+```
+
+Overflow occurred.
+
+---
+
+# 19. Catalan Numbers
+
+Count special structures.
+
+Example
+
+Number of
+
+* Valid Parentheses
+* Binary Search Trees
+
+For
+
+```text
+n=3
+```
+
+Answer
+
+```text
+5
+```
+
+---
+
+# 20. Recurrence Relations
+
+Express current answer using previous answers.
+
+Example
+
+Fibonacci
+
+```text
+F(n)
+
+=
+
+F(n-1)+F(n-2)
+```
+
+Used in
+
+* Dynamic Programming
+* Recursion
+
+---
+
+# 21. Binary Search Mathematics
+
+Search by repeatedly dividing the search space in half.
+
+Example
+
+```text
+Find 73
+
+Array
+
+10 20 30 40 50 60 70 80 90
+```
+
+Instead of checking one by one,
+
+```text
+Middle
+
+↓
+
+Left or Right
+
+↓
+
+Middle
+
+↓
+
+Answer
+```
+
+Time
+
+```text
+O(log N)
+```
+
+---
+
+# 22. Logarithms
+
+Whenever a problem repeatedly **halves** or **doubles** the input size, logarithms appear.
+
+Example
+
+```text
+1024
+
+↓
+
+512
+
+↓
+
+256
+
+↓
+
+128
+
+↓
+
+64
+```
+
+Only **10** divisions are needed.
+
+This is why Binary Search is **O(log n)**.
+
+---
+
+# 23. Powers of Two
+
+Very common in Bit Manipulation.
+
+```
+2⁰ = 1
+2¹ = 2
+2² = 4
+2³ = 8
+2⁴ = 16
+2⁵ = 32
+2⁶ = 64
+2⁷ = 128
+2⁸ = 256
+2⁹ = 512
+2¹⁰ = 1024
+```
+
+Example
+
+```text
+64
+
+=
+
+2⁶
+```
+
+---
+
+# 24. Overflow-safe Mid Calculation
+
+Instead of
+
+```java
+mid = (low + high) / 2;
+```
+
+Use
+
+```java
+mid = low + (high - low) / 2;
+```
+
+This avoids integer overflow in Binary Search.
+
+---
+
+# 25. Prefix XOR
+
+Similar to Prefix Sum but with XOR.
+
+Example
+
+Array
+
+```text
+5 2 7
+```
+
+Prefix XOR
+
+```text
+5
+
+5^2 = 7
+
+7^7 = 0
+```
+
+Used in range XOR queries.
+
+---
+
+# Summary Table
+
+| Concept                  | Simple Example       | Common DSA Usage      |
+| ------------------------ | -------------------- | --------------------- |
+| Number System            | 13 → 1101            | Bit Manipulation      |
+| Prime Numbers            | 29 is prime          | Number Theory         |
+| Factors                  | Factors of 12        | Math Problems         |
+| GCD & LCM                | GCD(12,18)=6         | Arrays, Fractions     |
+| Euclidean Algorithm      | GCD using `%`        | Fast GCD              |
+| Modular Arithmetic       | 17 % 5 = 2           | Large Numbers         |
+| Fast Exponentiation      | 2¹⁰⁰                 | Binary Exponentiation |
+| Square Root Optimization | Check till √N        | Factors, Primes       |
+| Bit Manipulation         | 5 & 1                | Binary Problems       |
+| XOR Properties           | a ^ a = 0            | Unique Element        |
+| Prefix Sum               | Running Sum          | Range Queries         |
+| Matrix Basics            | 2D Array             | Grid Problems         |
+| Factorial                | 5! = 120             | Counting              |
+| Combinations             | Choose 2 from 5      | DP, Probability       |
+| Permutations             | Arrange ABC          | Backtracking          |
+| Pascal's Triangle        | 1 3 3 1              | nCr                   |
+| AP                       | 2, 5, 8, 11          | Sequences             |
+| GP                       | 2, 4, 8, 16          | Exponential Growth    |
+| Overflow                 | `int` max + 1        | Safe Coding           |
+| Catalan Numbers          | BST Count            | Trees, DP             |
+| Recurrence Relations     | Fibonacci            | DP, Recursion         |
+| Binary Search            | Divide by Half       | Searching             |
+| Logarithms               | 1024 → 10 halvings   | Complexity Analysis   |
+| Powers of Two            | 64 = 2⁶              | Bit Manipulation      |
+| Overflow-safe Mid        | `low + (high-low)/2` | Binary Search         |
+| Prefix XOR               | Running XOR          | XOR Queries           |
+
+These 25 concepts together form the mathematical foundation for solving the majority of DSA problems you'll encounter in interviews and on platforms like LeetCode, GeeksforGeeks, and Striver's DSA Sheet.
