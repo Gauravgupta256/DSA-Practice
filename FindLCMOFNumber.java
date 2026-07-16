@@ -10,12 +10,7 @@ public class FindLCMOFNumber {
 
     // Function to find GCD
     public static int gcd(int a, int b) {
-        while (b != 0) {
-            int remainder = a % b;
-            a = b;
-            b = remainder;
-        }
-        return a;
+        return b==0 ? a : gcd(b, a%b);
     }
 
     // Function to find LCM
